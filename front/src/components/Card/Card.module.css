@@ -1,0 +1,34 @@
+img{
+    width:280px,
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 2px;
+}
+
+.buttonContainer button{
+    background-color: black;
+    color:aliceblue;
+}
+
+.container{
+    border: 1px solid rgb(131, 5, 5);
+    background-color: lightgray;
+    border-radius: 10px;
+    width: 300px;
+    padding: 5px;
+    box-shadow: 10px 0 10px rgb(240, 228, 228);
+    margin: 10px;
+}
+.img{
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+}
+
+.name{
+    font-size: 20px;
+    text-align: center;
+}
