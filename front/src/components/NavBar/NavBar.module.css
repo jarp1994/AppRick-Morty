@@ -1,8 +1,7 @@
 .containerSearch{
     display: flex;
-    justify-content:end;
+    justify-content: space-between;
     align-items:center;
-    width: 99%;
     position: sticky;
     top: 0;
     padding: 8px 8px 5px 5px;
@@ -17,4 +16,14 @@ h1{
     color: rgb(126, 57, 40);
     top: 0;
     align-items: center;
+}
+
+.home{
+    background-color: lightsalmon;
+    box-shadow: 10px 10px 20px rgba(12, 9, 9, 0.788);
+}
+
+.about{
+    background-color: lightsalmon;
+    box-shadow: 10px 10px 20px rgba(12, 9, 9, 0.788);
 }

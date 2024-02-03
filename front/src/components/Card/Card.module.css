@@ -1,7 +1,3 @@
-img{
-    width:280px,
-}
-
 .buttonContainer{
     display: flex;
     justify-content: flex-end;
@@ -37,6 +33,13 @@ img{
 
 .wrapperText{
     display: flex;
-    background-color: rgba(255, 230, 0, 0.753);
+    background-color: rgba(255, 230, 0, 0.329);
     width: 100%;
+}
+
+.details{
+    color:black;
+    text-align: center;
+    padding: 5px;
+    font-style: oblique;
 }

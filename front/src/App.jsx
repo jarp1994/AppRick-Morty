@@ -2,7 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import Cards from './components/Cards/Cards.jsx';
 import NavBar from "./components/NavBar/NavBar.jsx";
+import About from "./components/About/About.jsx";
+import Detail from "./components/Detail/Detail.jsx";
 import axios from "axios";
+import {Routes,Route} from "react-router-dom";
 
 function App() {
 // ejercicio 3 de la hw react estados
@@ -10,15 +13,20 @@ function App() {
    
 // puede ser cualquier cosa: data o event etc.. ejercicio 4 hw react estados
 function onSearch(id) {
-   axios(`https://rym2.up.railway.app/api/character/${id}?key={jarp1994}`).then(
+   if(characters.find(character=>character.id === Number(id))){
+      window.alert("Este personaje ya esta en pantalla")
+   }else{
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
       ({ data }) => {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
             window.alert('¡No hay personajes con este ID!');
+            } 
          }
-      }
-   );
+      )
+   }
+   ;
 }
 
 
@@ -27,14 +35,17 @@ const onClose = (id)=>{
 }
 
    return (
-      <div className='App'style={{padding:"25px"}}>
-         <div>
+      <div>
          <NavBar onSearch={onSearch}/>
-         </div>
-         <div>
-         <Cards characters={characters} onClose={onClose} />
-         </div> 
-        
+         <hr/>
+         <Routes>
+            <Route path="/about"element={<About/>}/>
+            <Route path="/home"element={
+               <Cards characters={characters} onClose={onClose} />
+            }/>
+            <Route path="/detail/:id" element={<Detail/>} />
+         </Routes>
+         
       </div>
    );
 }

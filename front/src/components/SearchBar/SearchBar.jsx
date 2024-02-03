@@ -12,13 +12,15 @@ const handleChange = event =>{
 
     return (
        <div className={styles.containerSearch}>
-          <input 
+          <input className={styles.input}
           type='search' 
           name="search"
           id="search"
           onChange={handleChange}
           />
+          <div className={styles.agregar}>
           <button onClick={()=> props.onSearch(character)}>Agregar</button>
+          </div>
        </div>
     );
  }

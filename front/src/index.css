@@ -13,7 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   background-image: url("../src/assets/images/galaxia.jpeg");
-  background-size:contain;
+  background-size:relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
@@ -27,10 +29,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {

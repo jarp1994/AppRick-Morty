@@ -1,0 +1,14 @@
+.containerSearch{
+    display: flex;
+    justify-content: center;
+}
+.input{
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(237, 245, 191);
+    box-shadow: 10px 10px 20px rgba(12, 9, 9, 0.788);
+}
+.agregar{
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(12, 9, 9, 0.788);
+}
