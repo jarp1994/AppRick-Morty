@@ -1,25 +1,53 @@
-const http = require('http');
-const PORT = 3001;   
-const getCharById = require('./controllers/getCharById.js');
+// ejercicio 1 express
 
-//ejercicio 2 promises
-http.createServer(function(req,res){
+import router from './routes';// ejercicio 6 express
+
+const express = require('express');
+const server = express();
+const PORT = 3001;
+
+server.listen(PORT, () => {
+   console.log('Server raised in port: ' + PORT);
+});
+
+//ejercicio 6 express
+server.use((req, res, next) => {
+   res.header('Access-Control-Allow-Origin', '*');
+   res.header('Access-Control-Allow-Credentials', 'true');
+   res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+   );
+   res.header(
+      'Access-Control-Allow-Methods',
+      'GET, POST, OPTIONS, PUT, DELETE'
+   );
+   next();
+});
+
+//middlewares
+server.use(express.json());
+server.use('/rickandmorty', router);
+
+
+
+
+
+// const http = require('http');
+// const PORT = 3001;   
+// const getCharById = require('./controllers/getCharById.js');
+
+// //ejercicio 2 promises
+// http.createServer(function(req,res){
     
-    res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Origin', '*');
     
-    if(req.url.includes("onsearch")){
-        const id = req.url.split("/").pop();
-        getCharById(res,id);
+//     if(req.url.includes("onsearch")){
+//         const id = req.url.split("/").pop();
+//         getCharById(res,id);
         
-    }
-}).listen(PORT,"localhost")
-
-
-
-
-
-
-
+//     }
+// }).listen(PORT,"localhost")
 
 
 
